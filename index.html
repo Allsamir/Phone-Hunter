@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+  <title>Phone Hunter</title>
+  <link rel="shortcut icon"
+    href="https://freepngimg.com/download/apple/68585-engine-search-smartphone-apple-optimization-iphone-logo.png"
+    type="image/x-icon">
+
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <header class="text-center mt-8">
+    <h1 class="text-6xl text-black">Search your phone</h1>
+  </header>
+  <main class="container mx-auto px-4 py-12">
+    <section class="search py-12">
+      <div class="search-phone w-96 mx-auto md:w-1/2 flex">
+        <label class="input input-bordered flex items-center gap-2 bg-white text-black flex-1">
+          <input id="search-field" type="text" class="grow" placeholder="Search..." />
+        </label>
+        <button class="btn btn-outline btn-info" onclick="handleSearch()"><svg xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4 opacity-70">
+            <path fill-rule="evenodd"
+              d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+              clip-rule="evenodd" /></svg>Search</button>
+      </div>
+    </section>
+    <section>
+      <div class="text-center flex justify-center items-center h-full"><span id="spinner"
+          class="hidden loading loading-spinner loading-lg text-black"></span></div>
+      <div id="phone-container" class="grid lg:grid-cols-3 gap-12 md:grid-cols-2 grid-cols-1 place-items-center">
+      </div>
+      <dialog id="error-meassage-container" class="modal">
+        <div class="modal-box bg-white text-black">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <h3 class="font-bold text-lg">Nothing found!</h3>
+          <p class="py-4">Check spelling and please search again</p>
+        </div>
+      </dialog>
+      <div class="showAllPhones text-center mt-12">
+        <button class="btn btn-ghost text-black text-lg hidden" id="show-all" onclick="showAllData()">Show All</button>
+      </div>
+      
+      <dialog id="show-details" class="modal">
+        
+      </dialog>
+    </section>
+  </main>
+  <footer></footer>
+  <!-- Js files -->
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
